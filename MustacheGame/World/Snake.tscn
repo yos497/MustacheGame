@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Sprites/Enemies/Snake.png" type="Texture" id=1]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/Snake.gd" type="Script" id=3]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/Enemies/PlayerDetection.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -39,7 +40,11 @@ radius = 6.78385
 height = 22.3456
 
 [sub_resource type="CircleShape2D" id=8]
-radius = 93.6804
+radius = 100.011
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 3.42203
+height = 24.3079
 
 [node name="Snake" type="KinematicBody2D"]
 collision_layer = 16
@@ -52,7 +57,7 @@ __meta__ = {
 position = Vector2( 0.148651, -8.02715 )
 frames = SubResource( 5 )
 animation = "Slither"
-frame = 1
+frame = 2
 speed_scale = 1.5
 playing = true
 
@@ -77,7 +82,17 @@ max_health = 3
 [node name="CollisionShape2D" parent="PlayerDetection" index="0"]
 modulate = Color( 1, 1, 1, 0.388235 )
 shape = SubResource( 8 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 6 )]
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 0, -6.31385 )
+rotation = 1.5708
+shape = SubResource( 9 )
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 
 [editable path="PlayerDetection"]
+
+[editable path="Hitbox"]

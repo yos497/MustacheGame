@@ -14,6 +14,7 @@ enum {
 var state = MOVE
 var velocity = Vector2.ZERO
 var roll_vector = Vector2.DOWN
+var stats = PlayerStats
 
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
@@ -21,6 +22,7 @@ onready var animationState = animationTree.get("parameters/playback")
 onready var knifeHitbox = $HitboxPoint/KnifeHitbox
 
 func _ready():
+	stats.connect("no_health", self, "queue_free")
 	animationTree.active = true
 	knifeHitbox.knockback_vector = roll_vector
 
@@ -81,3 +83,7 @@ func slash_animation_finished():
 	state = MOVE
 	
 
+
+
+func _on_Hurtbox_area_entered(area):
+	stats.health -= 1
