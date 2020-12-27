@@ -1,0 +1,70 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Sprites/Enemies/Snake.png" type="Texture" id=1]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/Snake.gd" type="Script" id=3]
+[ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 39, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 39, 0, 39, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 78, 0, 39, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 117, 0, 39, 32 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "Slither",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 1.49457
+height = 27.3063
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 6.78385
+height = 22.3456
+
+[node name="Snake" type="KinematicBody2D"]
+collision_layer = 16
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.148651, -8.02715 )
+frames = SubResource( 5 )
+animation = "Slither"
+speed_scale = 1.5
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.602993, -2.91043 )
+rotation = -1.5708
+shape = SubResource( 6 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 2 )]
+collision_layer = 2147483656
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2( -0.222977, -6.46564 )
+rotation = -1.5708
+shape = SubResource( 7 )
+
+[node name="Stats" parent="." instance=ExtResource( 4 )]
+max_health = 3
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]

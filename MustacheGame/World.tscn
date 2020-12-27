@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/Barrel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Big Dunes tile.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Desert transition 2.png" type="Texture" id=4]
+[ext_resource path="res://World/TutorialCactus.tscn" type="PackedScene" id=5]
+[ext_resource path="res://World/Snake.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sprites/Flat desert.png" type="Texture" id=7]
+
+[node name="World" type="Node2D"]
+
+[node name="Dunes" type="Sprite" parent="."]
+position = Vector2( -192, -72 )
+texture = ExtResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 16, 0, 304, 320 )
+
+[node name="FlatDesert" type="Sprite" parent="."]
+position = Vector2( 176, -72 )
+texture = ExtResource( 7 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 176, 320 )
+
+[node name="Transition" type="Sprite" parent="."]
+position = Vector2( 112, -72 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, -128, 64, 320 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 136, 64 )
+
+[node name="Camera2D" type="Camera2D" parent="YSort/Player"]
+current = true
+process_mode = 0
+smoothing_enabled = true
+
+[node name="Barrels" type="YSort" parent="YSort"]
+
+[node name="Barrel" parent="YSort/Barrels" instance=ExtResource( 2 )]
+position = Vector2( 89.6703, 58.0793 )
+
+[node name="Barrel3" parent="YSort/Barrels" instance=ExtResource( 2 )]
+position = Vector2( 227.88, 125.003 )
+
+[node name="Barrel2" parent="YSort/Barrels" instance=ExtResource( 2 )]
+position = Vector2( 138.003, 121.587 )
+
+[node name="TutorialCactus" type="YSort" parent="YSort"]
+
+[node name="TutorialCactus" parent="YSort/TutorialCactus" instance=ExtResource( 5 )]
+position = Vector2( 56, 120 )
+
+[node name="TutorialCactus2" parent="YSort/TutorialCactus" instance=ExtResource( 5 )]
+position = Vector2( 248, 40 )
+
+[node name="TutorialCactus3" parent="YSort/TutorialCactus" instance=ExtResource( 5 )]
+position = Vector2( 40, 56 )
+
+[node name="TutorialCactus4" parent="YSort/TutorialCactus" instance=ExtResource( 5 )]
+position = Vector2( 176, 120 )
+
+[node name="TutorialCactus5" parent="YSort/TutorialCactus" instance=ExtResource( 5 )]
+position = Vector2( 280, 120 )
+
+[node name="Snakes" type="YSort" parent="YSort"]
+
+[node name="Snake" parent="YSort/Snakes" instance=ExtResource( 6 )]
+position = Vector2( 104, 128 )
+
+[node name="Snake2" parent="YSort/Snakes" instance=ExtResource( 6 )]
+position = Vector2( 144, 160 )
+
+[node name="Snake3" parent="YSort/Snakes" instance=ExtResource( 6 )]
+position = Vector2( 104, 32 )
