@@ -20,6 +20,7 @@ var state = CHASE
 onready var sprite = $Sprite
 onready var stats = $Stats
 onready var playerDetection = $PlayerDetection
+onready var hurtbox = $Hurtbox
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, 400 * delta)
@@ -54,6 +55,7 @@ func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
 	print(stats.health)
 	knockback = area.knockback_vector * 150
+	hurtbox.create_hit_effect()
 
 func _on_Stats_no_health():
 	queue_free()
