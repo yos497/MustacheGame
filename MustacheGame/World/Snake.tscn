@@ -52,7 +52,7 @@ __meta__ = {
 position = Vector2( 0.148651, -8.02715 )
 frames = SubResource( 5 )
 animation = "Slither"
-frame = 1
+frame = 3
 speed_scale = 1.5
 playing = true
 
