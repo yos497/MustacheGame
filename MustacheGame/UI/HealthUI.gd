@@ -1,16 +1,25 @@
 extends Control
 
+var health = 10 setget set_health
+var max_health = 10 setget set_max_health
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var healthFull = $HealthFull
+
+func set_health(value):
+	health = clamp(value, 0, max_health)
+	if healthFull != null:
+		healthFull.rect_size.x = health * 6
 
 
-# Called when the node enters the scene tree for the first time.
+
+
+func set_max_health(value):
+	max_health = max(value, 1)
+
 func _ready():
-	pass # Replace with function body.
+	self.max_health = PlayerStats.max_health
+	self.health = PlayerStats.health
+	PlayerStats.connect("health_changed", self, "set_health")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	
+	

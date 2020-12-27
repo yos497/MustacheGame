@@ -5,9 +5,11 @@ const TutCactusKnock = preload("res://Effects/TutCactusKnock.tscn")
 
 onready var stats = $Stats
 onready var animationPlayer = $AnimationPlayer
+onready var hurtbox = $Hurtbox
 
 func _on_Hurtbox_area_entered(area):
 	animationPlayer.play("Knocked")
+	hurtbox.create_hit_effect()
 	stats.health -= area.damage
 
 func _on_Stats_no_health():
