@@ -6,7 +6,7 @@
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.72589, 5.55917 )
+extents = Vector2( 8.72589, 9.06464 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"
@@ -53,7 +53,7 @@ position = Vector2( 0, 0.210461 )
 collision_layer = 8
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-position = Vector2( -3.8147e-06, -3.65213 )
+position = Vector2( -3.8147e-06, -6.30378 )
 shape = SubResource( 1 )
 
 [node name="Stats" parent="." instance=ExtResource( 4 )]

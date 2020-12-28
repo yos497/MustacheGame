@@ -100,7 +100,6 @@ material = SubResource( 1 )
 position = Vector2( 0.148651, -8.02715 )
 frames = SubResource( 6 )
 animation = "Slither"
-frame = 2
 speed_scale = 1.5
 playing = true
 
