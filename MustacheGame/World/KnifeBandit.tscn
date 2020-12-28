@@ -10,31 +10,30 @@
 [ext_resource path="res://Sprites/Enemies/Bandit.png" type="Texture" id=8]
 [ext_resource path="res://Hitboxes and Hurtboxes/White.shader" type="Shader" id=9]
 
-[sub_resource type="ShaderMaterial" id=16]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 9 )
 shader_param/active = false
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 3.10199
 height = 3.39423
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 6.56887
 height = 2.36739
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 4.11338
 height = 8.14216
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=5]
 radius = 2.74804
 height = 4.57407
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=6]
 radius = 146.715
 
-[sub_resource type="Animation" id=6]
-resource_name = "IdleLeft"
+[sub_resource type="Animation" id=7]
 length = 0.1
 loop = true
 tracks/0/type = "value"
@@ -50,8 +49,7 @@ tracks/0/keys = {
 "values": [ 6 ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "IdleRight"
+[sub_resource type="Animation" id=8]
 length = 0.1
 loop = true
 tracks/0/type = "value"
@@ -67,8 +65,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "RunLeft"
+[sub_resource type="Animation" id=9]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -84,8 +81,7 @@ tracks/0/keys = {
 "values": [ 7, 8, 9, 10, 11, 6 ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "RunRight"
+[sub_resource type="Animation" id=10]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -101,8 +97,7 @@ tracks/0/keys = {
 "values": [ 1, 2, 3, 4, 5, 0 ]
 }
 
-[sub_resource type="Animation" id=10]
-resource_name = "SlashDown"
+[sub_resource type="Animation" id=11]
 length = 0.4
 step = 0.05
 tracks/0/type = "value"
@@ -142,8 +137,7 @@ tracks/2/keys = {
 "values": [ 90.0 ]
 }
 
-[sub_resource type="Animation" id=11]
-resource_name = "SlashLeft"
+[sub_resource type="Animation" id=12]
 length = 0.4
 step = 0.05
 tracks/0/type = "value"
@@ -183,8 +177,7 @@ tracks/2/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=12]
-resource_name = "SlashRight"
+[sub_resource type="Animation" id=13]
 length = 0.4
 step = 0.05
 tracks/0/type = "value"
@@ -224,8 +217,7 @@ tracks/2/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=13]
-resource_name = "SlashUp"
+[sub_resource type="Animation" id=14]
 length = 0.4
 step = 0.05
 tracks/0/type = "value"
@@ -265,7 +257,7 @@ tracks/2/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=15]
 resource_name = "Start"
 length = 0.2
 tracks/0/type = "value"
@@ -281,7 +273,7 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=16]
 resource_name = "Stop"
 length = 0.1
 tracks/0/type = "value"
@@ -297,23 +289,23 @@ tracks/0/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=19]
+[sub_resource type="AnimationNodeAnimation" id=17]
 animation = "IdleLeft"
 
-[sub_resource type="AnimationNodeAnimation" id=20]
+[sub_resource type="AnimationNodeAnimation" id=18]
 animation = "IdleRight"
 
-[sub_resource type="AnimationNodeBlendSpace1D" id=21]
-blend_point_0/node = SubResource( 19 )
+[sub_resource type="AnimationNodeBlendSpace1D" id=19]
+blend_point_0/node = SubResource( 17 )
 blend_point_0/pos = 0.0
-blend_point_1/node = SubResource( 20 )
+blend_point_1/node = SubResource( 18 )
 blend_point_1/pos = 1.0
 
-[sub_resource type="AnimationNodeStateMachine" id=22]
-states/Idle/node = SubResource( 21 )
+[sub_resource type="AnimationNodeStateMachine" id=20]
+states/Idle/node = SubResource( 19 )
 states/Idle/position = Vector2( 556, 94 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=23]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=21]
 
 [node name="KnifeBandit" type="KinematicBody2D"]
 position = Vector2( 0, 0.482212 )
@@ -323,7 +315,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 16 )
+material = SubResource( 1 )
 position = Vector2( 0, -7.99754 )
 texture = ExtResource( 8 )
 hframes = 28
@@ -331,7 +323,7 @@ hframes = 28
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 0.0253868 )
 rotation = 1.5708
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, -7.99754 )
@@ -339,7 +331,7 @@ collision_layer = 2147483656
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( 0, 3.53953 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 0, -7.99754 )
@@ -349,7 +341,7 @@ rotation = 1.5708
 position = Vector2( 9, 0 )
 
 [node name="CollisionShape2D" parent="Position2D/Hitbox" index="0"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 disabled = true
 
 [node name="SoftCollision" parent="." instance=ExtResource( 6 )]
@@ -358,13 +350,13 @@ position = Vector2( 0, -7.99754 )
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 position = Vector2( 0, 8.02293 )
 rotation = 1.5708
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="PlayerDetection" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -7.99754 )
 
 [node name="CollisionShape2D" parent="PlayerDetection" index="0"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Stats" parent="." instance=ExtResource( 5 )]
 max_health = 3
@@ -373,24 +365,24 @@ max_health = 3
 position = Vector2( 0, -7.99754 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/IdleLeft = SubResource( 6 )
-anims/IdleRight = SubResource( 7 )
-anims/RunLeft = SubResource( 8 )
-anims/RunRight = SubResource( 9 )
-anims/SlashDown = SubResource( 10 )
-anims/SlashLeft = SubResource( 11 )
-anims/SlashRight = SubResource( 12 )
-anims/SlashUp = SubResource( 13 )
+anims/IdleLeft = SubResource( 7 )
+anims/IdleRight = SubResource( 8 )
+anims/RunLeft = SubResource( 9 )
+anims/RunRight = SubResource( 10 )
+anims/SlashDown = SubResource( 11 )
+anims/SlashLeft = SubResource( 12 )
+anims/SlashRight = SubResource( 13 )
+anims/SlashUp = SubResource( 14 )
 
 [node name="BlinkAnimation" type="AnimationPlayer" parent="."]
-anims/Start = SubResource( 17 )
-anims/Stop = SubResource( 18 )
+anims/Start = SubResource( 15 )
+anims/Stop = SubResource( 16 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 22 )
+tree_root = SubResource( 20 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 23 )
+parameters/playback = SubResource( 21 )
 parameters/Idle/blend_position = 0
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="invincibility_ended" from="Hurtbox" to="." method="_on_Hurtbox_invincibility_ended"]

@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
+const BULLET = preload("res://World/EnemyBullet.tscn")
 
 export var ACCELERATION = 200
 export var MAX_SPEED = 40
@@ -15,7 +16,7 @@ enum {
 
 var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
-
+var shooting = false
 var state = RUN
 
 onready var sprite = $Sprite
@@ -27,7 +28,9 @@ onready var wanderController = $WanderController
 onready var blinkAnimation = $BlinkAnimation
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
+onready var canShoot = $CanShoot
 onready var animationState = animationTree.get("parameters/playback")
+onready var timer = $Timer
 
 func _ready():
 	state = pick_random_state([IDLE, WANDER])
@@ -72,7 +75,12 @@ func _physics_process(delta):
 		SHOOT:
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 			seek_player()
-			animationState.travel("Idle")
+			animationState.travel("Shoot")
+			if shooting == false:
+				shoot()
+				shooting = true
+				timer.start()
+			state = IDLE
 			
 			
 			
@@ -85,12 +93,29 @@ func _physics_process(delta):
 		animationState.travel("Run")
 	else:
 		animationState.travel("Idle")
+		
 	
 	velocity = move_and_slide(velocity)
 	
 	
+func shoot():
+	var bullet = BULLET.instance()
+	var player = canShoot.player
+	var posit = self.get_global_position()
+	var angle = get_angle_to(player.global_position) + self.get_rotation()
+	posit.y = posit.y - 5
+	
+	get_parent().add_child(bullet)
+	bullet.set_position(posit)
+	bullet.set_angle(angle)
+	
+	state = IDLE
+
+
 
 func seek_player():
+	if canShoot.can_see_player():
+		state = SHOOT
 	if playerDetection.can_see_player():
 		state = RUN
 		
@@ -119,3 +144,7 @@ func _on_Hurtbox_invincibility_started():
 
 func _on_Hurtbox_invincibility_ended():
 	blinkAnimation.play("Stop")
+
+
+func _on_Timer_timeout():
+	shooting = false

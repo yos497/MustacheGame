@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/EnemyBullet.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/bullet.png" type="Texture" id=3]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15.0081, 0.544355 )
+
+[node name="EnemyBullet" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 18, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="BulletHitbox" parent="." instance=ExtResource( 1 )]
+collision_mask = 4
+script = ExtResource( 4 )
+isBullet = true
+
+[node name="CollisionShape2D" parent="BulletHitbox" index="0"]
+position = Vector2( 17.0384, 1.00226 )
+shape = SubResource( 1 )
+[connection signal="area_entered" from="BulletHitbox" to="." method="_on_Hitbox_area_entered"]
+
+[editable path="BulletHitbox"]
