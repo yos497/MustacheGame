@@ -124,10 +124,9 @@ func shoot():
 	
 
 func _on_Hurtbox_area_entered(area):
-	if area.is_detector == false:
-		stats.health -= area.damage
-		hurtbox.start_invincibility(0.5)
-		hurtbox.create_hit_effect()
+	stats.health -= area.damage
+	hurtbox.start_invincibility(0.5)
+	hurtbox.create_hit_effect()
 
 
 func _on_Hurtbox_invincibility_started():

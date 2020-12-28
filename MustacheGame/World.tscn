@@ -84,26 +84,28 @@ position = Vector2( 280, 120 )
 [node name="Snakes" type="YSort" parent="YSort"]
 
 [node name="Snake" parent="YSort/Snakes" instance=ExtResource( 6 )]
-position = Vector2( 286.645, 69.1926 )
+position = Vector2( 742.645, 2.1926 )
 
 [node name="Snake2" parent="YSort/Snakes" instance=ExtResource( 6 )]
-position = Vector2( -58.9399, 193.234 )
+position = Vector2( -388.94, 314.234 )
 
 [node name="Snake3" parent="YSort/Snakes" instance=ExtResource( 6 )]
-position = Vector2( -69.7367, -14.7223 )
+position = Vector2( -327.737, -127.722 )
 
 [node name="EnemyCacti" type="YSort" parent="YSort"]
 
 [node name="EnemyCactus" parent="YSort/EnemyCacti" instance=ExtResource( 10 )]
-position = Vector2( 269.533, -42.987 )
+position = Vector2( 720.533, -105.987 )
 
 [node name="Bandits" type="YSort" parent="YSort"]
 
 [node name="KnifeBandit" parent="YSort/Bandits" instance=ExtResource( 11 )]
-position = Vector2( -94.4155, 98.7752 )
+position = Vector2( -467.415, 86.7752 )
 
-[node name="ArmedBandit" parent="YSort/Bandits/KnifeBandit" instance=ExtResource( 12 )]
-position = Vector2( 250.415, 37.2248 )
+[node name="Armed" type="YSort" parent="YSort"]
+
+[node name="ArmedBandit" parent="YSort/Armed" instance=ExtResource( 12 )]
+position = Vector2( 302.719, 197.675 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
