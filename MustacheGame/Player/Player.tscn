@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Randy.png" type="Texture" id=2]
@@ -265,6 +265,138 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 19, 20, 21, 22, 23, 18 ]
+}
+
+[sub_resource type="Animation" id=51]
+resource_name = "ShootBowDown"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 85, 177 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "shoot"
+}, {
+"args": [  ],
+"method": "shoot_animation_finished"
+} ]
+}
+
+[sub_resource type="Animation" id=52]
+resource_name = "ShootBowLeft"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 86, 178 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "shoot"
+}, {
+"args": [  ],
+"method": "shoot_animation_finished"
+} ]
+}
+
+[sub_resource type="Animation" id=53]
+resource_name = "ShootBowRight"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 84, 176 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "shoot"
+}, {
+"args": [  ],
+"method": "shoot_animation_finished"
+} ]
+}
+
+[sub_resource type="Animation" id=54]
+resource_name = "ShootBowUp"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 87, 179 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "shoot"
+}, {
+"args": [  ],
+"method": "shoot_animation_finished"
+} ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -558,6 +690,31 @@ min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
 blend_mode = 1
 
+[sub_resource type="AnimationNodeAnimation" id=55]
+animation = "ShootBowDown"
+
+[sub_resource type="AnimationNodeAnimation" id=56]
+animation = "ShootBowUp"
+
+[sub_resource type="AnimationNodeAnimation" id=57]
+animation = "ShootBowLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=58]
+animation = "ShootBowRight"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=59]
+blend_point_0/node = SubResource( 55 )
+blend_point_0/pos = Vector2( 0, 1.1 )
+blend_point_1/node = SubResource( 56 )
+blend_point_1/pos = Vector2( 0, -1.1 )
+blend_point_2/node = SubResource( 57 )
+blend_point_2/pos = Vector2( -1, 0 )
+blend_point_3/node = SubResource( 58 )
+blend_point_3/pos = Vector2( 1, 0 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
 [sub_resource type="AnimationNodeAnimation" id=33]
 animation = "SlashLeft"
 
@@ -595,6 +752,10 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=43]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=61]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=62]
+
 [sub_resource type="AnimationNodeStateMachine" id=44]
 states/Idle/node = SubResource( 22 )
 states/Idle/position = Vector2( 338, 190 )
@@ -602,11 +763,13 @@ states/Roll/node = SubResource( 27 )
 states/Roll/position = Vector2( 338, 64 )
 states/Run/node = SubResource( 32 )
 states/Run/position = Vector2( 527, 190 )
+states/ShootBow/node = SubResource( 59 )
+states/ShootBow/position = Vector2( 171, 190 )
 states/Slash/node = SubResource( 37 )
 states/Slash/position = Vector2( 338, 285 )
-transitions = [ "Run", "Idle", SubResource( 38 ), "Idle", "Run", SubResource( 39 ), "Slash", "Idle", SubResource( 40 ), "Idle", "Slash", SubResource( 41 ), "Idle", "Roll", SubResource( 42 ), "Roll", "Idle", SubResource( 43 ) ]
+transitions = [ "Run", "Idle", SubResource( 38 ), "Idle", "Run", SubResource( 39 ), "Slash", "Idle", SubResource( 40 ), "Idle", "Slash", SubResource( 41 ), "Idle", "Roll", SubResource( 42 ), "Roll", "Idle", SubResource( 43 ), "ShootBow", "Idle", SubResource( 61 ), "Idle", "ShootBow", SubResource( 62 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -74, -20 )
+graph_offset = Vector2( -361, 82 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=45]
 
@@ -683,6 +846,10 @@ anims/RunDown = SubResource( 10 )
 anims/RunLeft = SubResource( 11 )
 anims/RunRight = SubResource( 12 )
 anims/RunUp = SubResource( 13 )
+anims/ShootBowDown = SubResource( 51 )
+anims/ShootBowLeft = SubResource( 52 )
+anims/ShootBowRight = SubResource( 53 )
+anims/ShootBowUp = SubResource( 54 )
 anims/SlashDown = SubResource( 14 )
 anims/SlashLeft = SubResource( 15 )
 anims/SlashRight = SubResource( 16 )
@@ -691,15 +858,16 @@ anims/SlashUp = SubResource( 17 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 44 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 45 )
 parameters/Idle/blend_position = Vector2( 0, 1 )
 parameters/Roll/blend_position = Vector2( 0, 1 )
 parameters/Run/blend_position = Vector2( 0, 1 )
+parameters/ShootBow/blend_position = Vector2( -0.162547, 0.0275 )
 parameters/Slash/blend_position = Vector2( 0, 1 )
 
 [node name="HitboxPoint" type="Position2D" parent="."]
 position = Vector2( 0, -7 )
-rotation = 1.5708
 __meta__ = {
 "_gizmo_extents_": 8.0
 }
@@ -723,6 +891,10 @@ shape = SubResource( 47 )
 [node name="BlinkAnimation" type="AnimationPlayer" parent="."]
 anims/Start = SubResource( 49 )
 anims/Stop = SubResource( 50 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="invincibility_ended" from="Hurtbox" to="." method="_on_Hurtbox_invincibility_ended"]
 [connection signal="invincibility_started" from="Hurtbox" to="." method="_on_Hurtbox_invincibility_started"]
