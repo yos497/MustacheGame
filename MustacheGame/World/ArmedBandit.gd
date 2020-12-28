@@ -27,6 +27,7 @@ onready var wanderController = $WanderController
 onready var blinkAnimation = $BlinkAnimation
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
+onready var canShoot = $CanShoot
 onready var animationState = animationTree.get("parameters/playback")
 
 func _ready():
@@ -91,6 +92,8 @@ func _physics_process(delta):
 	
 
 func seek_player():
+	if canShoot.can_see_player():
+		state = SHOOT
 	if playerDetection.can_see_player():
 		state = RUN
 		
