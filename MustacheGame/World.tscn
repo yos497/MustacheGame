@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Barrel.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Camera2D.tscn" type="PackedScene" id=9]
 [ext_resource path="res://World/EnemyCactus.tscn" type="PackedScene" id=10]
+[ext_resource path="res://World/KnifeBandit.tscn" type="PackedScene" id=11]
+[ext_resource path="res://World/ArmedBandit.tscn" type="PackedScene" id=12]
 
 [node name="World" type="Node2D"]
 
@@ -93,7 +95,15 @@ position = Vector2( -69.7367, -14.7223 )
 [node name="EnemyCacti" type="YSort" parent="YSort"]
 
 [node name="EnemyCactus" parent="YSort/EnemyCacti" instance=ExtResource( 10 )]
-position = Vector2( 188.36, 4.2067 )
+position = Vector2( 269.533, -42.987 )
+
+[node name="Bandits" type="YSort" parent="YSort"]
+
+[node name="KnifeBandit" parent="YSort/Bandits" instance=ExtResource( 11 )]
+position = Vector2( -94.4155, 98.7752 )
+
+[node name="ArmedBandit" parent="YSort/Bandits/KnifeBandit" instance=ExtResource( 12 )]
+position = Vector2( 250.415, 37.2248 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
