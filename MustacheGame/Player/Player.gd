@@ -58,8 +58,6 @@ func move_state(delta):
 	mouse_position.x = get_global_mouse_position().x - self.get_global_position().x
 	mouse_position.y = get_global_mouse_position().y - self.get_global_position().y
 	
-	print(mouse_position.x)
-	print(mouse_position.y)
 	
 	if input_vector != Vector2.ZERO:
 		roll_vector = input_vector
@@ -126,9 +124,10 @@ func shoot():
 	
 
 func _on_Hurtbox_area_entered(area):
-	stats.health -= 1
-	hurtbox.start_invincibility(0.5)
-	hurtbox.create_hit_effect()
+	if area.is_detector == false:
+		stats.health -= area.damage
+		hurtbox.start_invincibility(0.5)
+		hurtbox.create_hit_effect()
 
 
 func _on_Hurtbox_invincibility_started():

@@ -4,6 +4,7 @@
 script/source = "extends Area2D
 
 export var damage = 1
+export var is_detector = false
 "
 
 [node name="Hitbox" type="Area2D"]

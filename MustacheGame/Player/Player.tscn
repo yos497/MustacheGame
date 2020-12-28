@@ -858,6 +858,7 @@ parameters/Slash/blend_position = Vector2( 0, 1 )
 
 [node name="HitboxPoint" type="Position2D" parent="."]
 position = Vector2( 0, -7 )
+rotation = 3.14159
 __meta__ = {
 "_gizmo_extents_": 8.0
 }
