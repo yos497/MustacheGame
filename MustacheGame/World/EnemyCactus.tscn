@@ -18,7 +18,7 @@ shader_param/active = false
 radius = 3.99034
 height = 4.53742
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "IdleDown"
 length = 0.1
 loop = true
@@ -35,7 +35,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "IdleLeft"
 length = 0.1
 loop = true
@@ -52,7 +52,7 @@ tracks/0/keys = {
 "values": [ 9 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "IdleRight"
 length = 0.1
 loop = true
@@ -69,7 +69,7 @@ tracks/0/keys = {
 "values": [ 6 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 resource_name = "IdleUp"
 length = 0.1
 loop = true
@@ -86,8 +86,7 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "MoveDown"
+[sub_resource type="Animation" id=7]
 length = 0.7
 loop = true
 step = 0.05
@@ -205,26 +204,26 @@ tracks/0/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=31]
+[sub_resource type="AnimationNodeAnimation" id=17]
 animation = "IdleDown"
 
-[sub_resource type="AnimationNodeAnimation" id=32]
+[sub_resource type="AnimationNodeAnimation" id=18]
 animation = "IdleUp"
 
-[sub_resource type="AnimationNodeAnimation" id=33]
+[sub_resource type="AnimationNodeAnimation" id=19]
 animation = "IdleLeft"
 
-[sub_resource type="AnimationNodeAnimation" id=34]
+[sub_resource type="AnimationNodeAnimation" id=20]
 animation = "IdleRight"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=35]
-blend_point_0/node = SubResource( 31 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=21]
+blend_point_0/node = SubResource( 17 )
 blend_point_0/pos = Vector2( 0, 1.1 )
-blend_point_1/node = SubResource( 32 )
+blend_point_1/node = SubResource( 18 )
 blend_point_1/pos = Vector2( 0, -1.1 )
-blend_point_2/node = SubResource( 33 )
+blend_point_2/node = SubResource( 19 )
 blend_point_2/pos = Vector2( -1, 0 )
-blend_point_3/node = SubResource( 34 )
+blend_point_3/node = SubResource( 20 )
 blend_point_3/pos = Vector2( 1, 0 )
 min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
@@ -254,16 +253,16 @@ min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
 
 [sub_resource type="AnimationNodeStateMachine" id=29]
-states/Idle/node = SubResource( 35 )
+states/Idle/node = SubResource( 21 )
 states/Idle/position = Vector2( 579, 120 )
 states/Moving/node = SubResource( 26 )
 states/Moving/position = Vector2( 758, 120 )
-transitions = [ "Moving", "Idle", SubResource( 36 ), "Idle", "Moving", SubResource( 37 ) ]
+transitions = [ "Moving", "Idle", SubResource( 27 ), "Idle", "Moving", SubResource( 28 ) ]
 start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=30]
@@ -286,11 +285,11 @@ rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/IdleDown = SubResource( 4 )
-anims/IdleLeft = SubResource( 5 )
-anims/IdleRight = SubResource( 6 )
-anims/IdleUp = SubResource( 7 )
-anims/MoveDown = SubResource( 3 )
+anims/IdleDown = SubResource( 3 )
+anims/IdleLeft = SubResource( 4 )
+anims/IdleRight = SubResource( 5 )
+anims/IdleUp = SubResource( 6 )
+anims/MoveDown = SubResource( 7 )
 anims/MoveLeft = SubResource( 8 )
 anims/MoveRight = SubResource( 9 )
 anims/MoveUp = SubResource( 10 )

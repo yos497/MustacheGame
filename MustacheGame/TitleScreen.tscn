@@ -1,21 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Sprites/Main_menu_screen.png" type="Texture" id=1]
-[ext_resource path="res://UI/PlayButton.gd" type="Script" id=3]
-[ext_resource path="res://UI/TitleScreen.gd" type="Script" id=4]
+[ext_resource path="res://TitleScreen.gd" type="Script" id=2]
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-script = ExtResource( 4 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-show_behind_parent = true
-light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 1 )
@@ -23,7 +20,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayButton" type="Button" parent="."]
+[node name="Button" type="Button" parent="."]
 anchor_left = 0.322
 anchor_top = 0.672
 anchor_right = 0.662
@@ -32,11 +29,8 @@ margin_left = -0.0400085
 margin_top = 0.0399933
 margin_right = 0.159973
 margin_bottom = 0.0599976
-action_mode = 0
-button_mask = 5
 flat = true
-script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-onready var animation = $Contol/AnimationPlayer
+onready var animation = $AnimationPlayer
 var scene : String
 
 func change_scene(new_scene, anim):
