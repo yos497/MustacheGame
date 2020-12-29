@@ -103,10 +103,10 @@ position = Vector2( 333.291, 174.968 )
 [node name="Snakes" type="YSort" parent="YSort"]
 
 [node name="Snake" parent="YSort/Snakes" instance=ExtResource( 6 )]
-position = Vector2( 197.266, 225.967 )
+position = Vector2( 228.617, 219.221 )
 
 [node name="Snake2" parent="YSort/Snakes" instance=ExtResource( 6 )]
-position = Vector2( -58.9399, 193.234 )
+position = Vector2( 45.8286, 218.632 )
 
 [node name="Snake3" parent="YSort/Snakes" instance=ExtResource( 6 )]
 position = Vector2( -69.7367, -14.7223 )
@@ -114,15 +114,24 @@ position = Vector2( -69.7367, -14.7223 )
 [node name="EnemyCacti" type="YSort" parent="YSort"]
 
 [node name="EnemyCactus" parent="YSort/EnemyCacti" instance=ExtResource( 10 )]
-position = Vector2( 148.419, -43.7225 )
+position = Vector2( 214.693, 5.88378 )
 
 [node name="Bandits" type="YSort" parent="YSort"]
 
 [node name="KnifeBandit" parent="YSort/Bandits" instance=ExtResource( 11 )]
-position = Vector2( -141.13, 176.472 )
+position = Vector2( -128.227, 183.871 )
 
-[node name="ArmedBandit" parent="YSort/Bandits/KnifeBandit" instance=ExtResource( 12 )]
-position = Vector2( 250.415, 37.2248 )
+[node name="ArmedBandit" parent="YSort/Bandits" instance=ExtResource( 12 )]
+position = Vector2( -122.074, -9.26131 )
+
+[node name="KnifeBandit2" parent="YSort/Bandits" instance=ExtResource( 11 )]
+position = Vector2( 95.9074, -26.0885 )
+
+[node name="EnemyCactus" parent="YSort/Bandits/KnifeBandit2" instance=ExtResource( 10 )]
+position = Vector2( -108.992, 188.535 )
+
+[node name="ArmedBandit2" parent="YSort/Bandits" instance=ExtResource( 12 )]
+position = Vector2( 115.75, 218.286 )
 
 [node name="Houses" type="YSort" parent="YSort"]
 
