@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Kevin-MacLeod-Cowboy-Sting.wav-d7b880b10aa44c07c704829ef65f5f0d.sample"
+
+[deps]
+
+source_file="res://Sound/Music/Kevin-MacLeod-Cowboy-Sting.wav"
+dest_files=[ "res://.import/Kevin-MacLeod-Cowboy-Sting.wav-d7b880b10aa44c07c704829ef65f5f0d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=false
+compress/mode=0

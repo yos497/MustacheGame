@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Kevin-MacLeod-Master-of-the-Feast.wav-b68e6efadc7a1295f67352d5914dbad3.sample"
+
+[deps]
+
+source_file="res://Sound/Music/Kevin-MacLeod-Master-of-the-Feast.wav"
+dest_files=[ "res://.import/Kevin-MacLeod-Master-of-the-Feast.wav-b68e6efadc7a1295f67352d5914dbad3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

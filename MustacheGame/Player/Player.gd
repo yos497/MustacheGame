@@ -26,7 +26,7 @@ onready var knifeHitbox = $HitboxPoint/KnifeHitbox
 onready var hurtbox = $Hurtbox
 onready var blinkAnimation = $BlinkAnimation
 onready var timer = $Timer
-
+onready var groan = $PlayerGroan
 
 func _ready():
 	randomize()
@@ -125,6 +125,7 @@ func shoot():
 
 func _on_Hurtbox_area_entered(area):
 	stats.health -= area.damage
+	groan.play()
 	hurtbox.start_invincibility(0.5)
 	hurtbox.create_hit_effect()
 
