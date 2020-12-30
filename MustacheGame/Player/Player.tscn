@@ -1232,7 +1232,7 @@ one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-volume_db = -17.0
+volume_db = -19.0
 
 [node name="PlayerGroan" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
