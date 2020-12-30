@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Play.wav-fff675076c6f00b8b388db6aa283b119.sample"
+
+[deps]
+
+source_file="res://Sound/SFX/Play.wav"
+dest_files=[ "res://.import/Play.wav-fff675076c6f00b8b388db6aa283b119.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
