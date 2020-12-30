@@ -63,7 +63,7 @@ func _physics_process(delta):
 				wanderController.start_timer(rand_range(1, 3))
 			
 		RUN:
-			var player = playerDetection.player
+			var player = canShoot.player
 			if player != null:
 				var direction = global_position.direction_to(player.global_position)
 				direction.x = - direction.x
