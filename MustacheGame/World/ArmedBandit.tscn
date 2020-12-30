@@ -10,6 +10,7 @@
 [ext_resource path="res://Hitboxes and Hurtboxes/White.shader" type="Shader" id=8]
 
 [sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
 shader = ExtResource( 8 )
 shader_param/active = false
 
@@ -26,10 +27,10 @@ radius = 1.90892
 height = 6.27939
 
 [sub_resource type="CircleShape2D" id=5]
-radius = 58.9802
+radius = 54.2454
 
 [sub_resource type="CircleShape2D" id=6]
-radius = 144.011
+radius = 124.991
 
 [sub_resource type="Animation" id=7]
 length = 0.1
@@ -96,7 +97,7 @@ tracks/0/keys = {
 "values": [ 1, 2, 3, 4, 5, 0 ]
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=11]
 resource_name = "ShootLeft"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -111,7 +112,7 @@ tracks/0/keys = {
 "values": [ 6 ]
 }
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=12]
 resource_name = "ShootRight"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -126,63 +127,63 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=13]
 animation = "IdleLeft"
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=14]
 animation = "IdleRight"
 
-[sub_resource type="AnimationNodeBlendSpace1D" id=13]
-blend_point_0/node = SubResource( 11 )
+[sub_resource type="AnimationNodeBlendSpace1D" id=15]
+blend_point_0/node = SubResource( 13 )
 blend_point_0/pos = 0.0
-blend_point_1/node = SubResource( 12 )
+blend_point_1/node = SubResource( 14 )
 blend_point_1/pos = 1.0
 
-[sub_resource type="AnimationNodeAnimation" id=14]
+[sub_resource type="AnimationNodeAnimation" id=16]
 animation = "RunLeft"
 
-[sub_resource type="AnimationNodeAnimation" id=15]
+[sub_resource type="AnimationNodeAnimation" id=17]
 animation = "RunRight"
 
-[sub_resource type="AnimationNodeBlendSpace1D" id=16]
-blend_point_0/node = SubResource( 14 )
+[sub_resource type="AnimationNodeBlendSpace1D" id=18]
+blend_point_0/node = SubResource( 16 )
 blend_point_0/pos = 0.0
-blend_point_1/node = SubResource( 15 )
+blend_point_1/node = SubResource( 17 )
 blend_point_1/pos = 1.0
 
-[sub_resource type="AnimationNodeAnimation" id=25]
+[sub_resource type="AnimationNodeAnimation" id=19]
 animation = "ShootLeft"
 
-[sub_resource type="AnimationNodeAnimation" id=26]
+[sub_resource type="AnimationNodeAnimation" id=20]
 animation = "ShootRight"
 
-[sub_resource type="AnimationNodeBlendSpace1D" id=27]
-blend_point_0/node = SubResource( 25 )
+[sub_resource type="AnimationNodeBlendSpace1D" id=21]
+blend_point_0/node = SubResource( 19 )
 blend_point_0/pos = 0.0
-blend_point_1/node = SubResource( 26 )
+blend_point_1/node = SubResource( 20 )
 blend_point_1/pos = 1.0
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
 
-[sub_resource type="AnimationNodeStateMachine" id=19]
-states/Idle/node = SubResource( 13 )
+[sub_resource type="AnimationNodeStateMachine" id=26]
+states/Idle/node = SubResource( 15 )
 states/Idle/position = Vector2( 506, 86 )
-states/Run/node = SubResource( 16 )
+states/Run/node = SubResource( 18 )
 states/Run/position = Vector2( 672, 86 )
-states/Shoot/node = SubResource( 27 )
+states/Shoot/node = SubResource( 21 )
 states/Shoot/position = Vector2( 334, 86 )
-transitions = [ "Idle", "Run", SubResource( 17 ), "Run", "Idle", SubResource( 18 ), "Idle", "Shoot", SubResource( 28 ), "Shoot", "Idle", SubResource( 29 ) ]
+transitions = [ "Idle", "Run", SubResource( 22 ), "Run", "Idle", SubResource( 23 ), "Idle", "Shoot", SubResource( 24 ), "Shoot", "Idle", SubResource( 25 ) ]
 start_node = "Idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=20]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=27]
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=28]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:material:shader_param/active")
@@ -197,7 +198,7 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=29]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:material:shader_param/active")
@@ -259,21 +260,21 @@ anims/IdleLeft = SubResource( 7 )
 anims/IdleRight = SubResource( 8 )
 anims/RunLeft = SubResource( 9 )
 anims/RunRight = SubResource( 10 )
-anims/ShootLeft = SubResource( 23 )
-anims/ShootRight = SubResource( 24 )
+anims/ShootLeft = SubResource( 11 )
+anims/ShootRight = SubResource( 12 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 19 )
+tree_root = SubResource( 26 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 20 )
+parameters/playback = SubResource( 27 )
 parameters/Idle/blend_position = 0
 parameters/Run/blend_position = 0.0818933
 parameters/Shoot/blend_position = 0
 
 [node name="BlinkAnimation" type="AnimationPlayer" parent="."]
-anims/Start = SubResource( 21 )
-anims/Stop = SubResource( 22 )
+anims/Start = SubResource( 28 )
+anims/Stop = SubResource( 29 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
