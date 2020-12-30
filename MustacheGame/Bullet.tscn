@@ -6,7 +6,7 @@
 [ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 11.1791, 0.770099 )
+extents = Vector2( 7.26842, 0.770099 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2.17048, 1.13972 )
@@ -22,7 +22,7 @@ scale = Vector2( 0.650005, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 11.0823, 1.00226 )
+position = Vector2( 7.29828, 1.00226 )
 shape = SubResource( 2 )
 
 [node name="BulletHitbox" parent="." instance=ExtResource( 3 )]
