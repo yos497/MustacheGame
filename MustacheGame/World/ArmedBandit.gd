@@ -4,7 +4,7 @@ const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 const BULLET = preload("res://World/EnemyBullet.tscn")
 
 export var ACCELERATION = 200
-export var MAX_SPEED = 40
+export var MAX_SPEED = 30
 export var FRICTION = 200
 
 enum {
