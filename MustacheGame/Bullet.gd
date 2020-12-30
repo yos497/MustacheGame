@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const SPEED = 900
+export var SPEED = 900
 
 var velocity = Vector2.ZERO
 var direction

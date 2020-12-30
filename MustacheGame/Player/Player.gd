@@ -93,14 +93,12 @@ func roll_state(delta):
 func slash_state(delta):
 	velocity = Vector2.ZERO
 	animationState.travel("Slash")
-	
+
 func shoot_state(delta):
 	velocity = Vector2.ZERO
 	animationState.travel("ShootBow")
 
 
-	
-	
 func move():
 	move_and_slide(velocity)
 
