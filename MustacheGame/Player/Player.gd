@@ -109,6 +109,7 @@ func move():
 
 func roll_animation_finished():
 	state = MOVE
+	rolling = false
 
 func slash_animation_finished():
 	state = MOVE
