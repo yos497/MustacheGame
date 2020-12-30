@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Effects/pngs/Death animation.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Enemies/EnemyDeathEffect.gd" type="Script" id=2]
+[ext_resource path="res://Sound/SFX/Enemy death.wav" type="AudioStream" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -49,3 +50,8 @@ animation = "Animate"
 frame = 7
 playing = true
 script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -28.0
+autoplay = true

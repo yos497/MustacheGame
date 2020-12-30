@@ -210,7 +210,7 @@ polygon = PoolVector2Array( -191.614, -72.3859, -239.251, -128.351, 804.422, -12
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 20 )
-volume_db = -17.0
+volume_db = -20.0
 autoplay = true
 
 [editable path="Camera2D"]

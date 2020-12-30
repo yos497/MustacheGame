@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bow release.wav-85f76aa1870a075b8d55608cf4ce07fd.sample"
+
+[deps]
+
+source_file="res://Sound/SFX/Bow release.wav"
+dest_files=[ "res://.import/Bow release.wav-85f76aa1870a075b8d55608cf4ce07fd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
