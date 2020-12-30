@@ -18,6 +18,7 @@ var state = MOVE
 var velocity = Vector2.ZERO
 var roll_vector = Vector2.DOWN
 var stats = PlayerStats
+var rolling = false
 
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
@@ -70,6 +71,7 @@ func move_state(delta):
 		animationState.travel("Run")
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 	else:
+		animationTree.set("parameters/ShootBow/blend_position", mouse_position)
 		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	
@@ -77,6 +79,7 @@ func move_state(delta):
 	
 	if Input.is_action_just_pressed("roll"):
 		state = ROLL
+		rolling = true
 		hurtbox.start_invincibility(0.5)
 	
 	if Input.is_action_just_pressed("attack"):
@@ -130,7 +133,8 @@ func _on_Hurtbox_area_entered(area):
 
 
 func _on_Hurtbox_invincibility_started():
-	blinkAnimation.play("Start")
+	if rolling == false:
+		blinkAnimation.play("Start")
 
 
 func _on_Hurtbox_invincibility_ended():
