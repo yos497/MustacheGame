@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Barrel.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://World/HillsUp.tscn" type="PackedScene" id=17]
 [ext_resource path="res://World/Saloon.tscn" type="PackedScene" id=18]
 [ext_resource path="res://World/HouseUP.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Sound/Music/Kevin-MacLeod-Master-of-the-Feast.wav" type="AudioStream" id=20]
 
 [node name="World" type="Node2D"]
 
@@ -100,13 +101,16 @@ position = Vector2( 333.138, 159.25 )
 [node name="TutorialCactus9" parent="YSort/TutorialCactus" instance=ExtResource( 5 )]
 position = Vector2( 333.291, 174.968 )
 
+[node name="TutorialCactus10" parent="YSort/TutorialCactus" instance=ExtResource( 5 )]
+position = Vector2( 332.93, 190.368 )
+
 [node name="Snakes" type="YSort" parent="YSort"]
 
 [node name="Snake" parent="YSort/Snakes" instance=ExtResource( 6 )]
-position = Vector2( 197.266, 225.967 )
+position = Vector2( 228.617, 219.221 )
 
 [node name="Snake2" parent="YSort/Snakes" instance=ExtResource( 6 )]
-position = Vector2( -58.9399, 193.234 )
+position = Vector2( 45.8286, 218.632 )
 
 [node name="Snake3" parent="YSort/Snakes" instance=ExtResource( 6 )]
 position = Vector2( -69.7367, -14.7223 )
@@ -114,15 +118,24 @@ position = Vector2( -69.7367, -14.7223 )
 [node name="EnemyCacti" type="YSort" parent="YSort"]
 
 [node name="EnemyCactus" parent="YSort/EnemyCacti" instance=ExtResource( 10 )]
-position = Vector2( 148.419, -43.7225 )
+position = Vector2( 214.693, 5.88378 )
+
+[node name="EnemyCactus2" parent="YSort/EnemyCacti" instance=ExtResource( 10 )]
+position = Vector2( -13.0846, 162.447 )
 
 [node name="Bandits" type="YSort" parent="YSort"]
 
 [node name="KnifeBandit" parent="YSort/Bandits" instance=ExtResource( 11 )]
-position = Vector2( -141.13, 176.472 )
+position = Vector2( -128.227, 183.871 )
 
 [node name="ArmedBandit" parent="YSort/Bandits" instance=ExtResource( 12 )]
-position = Vector2( 109.285, 213.697 )
+position = Vector2( -122.074, -9.26131 )
+
+[node name="KnifeBandit2" parent="YSort/Bandits" instance=ExtResource( 11 )]
+position = Vector2( 95.9074, -26.0885 )
+
+[node name="ArmedBandit2" parent="YSort/Bandits" instance=ExtResource( 12 )]
+position = Vector2( 115.75, 218.286 )
 
 [node name="Houses" type="YSort" parent="YSort"]
 
@@ -136,45 +149,45 @@ position = Vector2( 516.864, 48.2706 )
 position = Vector2( 644.093, 48.7394 )
 
 [node name="HouseUP" parent="YSort/Houses" instance=ExtResource( 19 )]
-position = Vector2( 386.706, 202.818 )
+position = Vector2( 388.692, 211.161 )
 
 [node name="HouseUP2" parent="YSort/Houses" instance=ExtResource( 19 )]
-position = Vector2( 513.301, 202.025 )
+position = Vector2( 513.45, 210.498 )
 
 [node name="HouseUP3" parent="YSort/Houses" instance=ExtResource( 19 )]
-position = Vector2( 643.865, 202.025 )
+position = Vector2( 647.577, 211.041 )
 
 [node name="Hills" type="YSort" parent="YSort"]
 
 [node name="HillsFront" parent="YSort/Hills" instance=ExtResource( 15 )]
-position = Vector2( 367.028, 0.342442 )
+position = Vector2( 368.5, 14.8479 )
 
 [node name="HillsLeft" parent="YSort/Hills" instance=ExtResource( 14 )]
-position = Vector2( 344.78, -14.0146 )
+position = Vector2( 346.282, 1.1692 )
 
 [node name="HillsTop" parent="YSort/Hills" instance=ExtResource( 16 )]
-position = Vector2( 479.759, -100.233 )
+position = Vector2( 479.759, -85.7275 )
 
 [node name="HillsTop2" parent="YSort/Hills" instance=ExtResource( 16 )]
-position = Vector2( 583.209, -99.8991 )
+position = Vector2( 584.153, -86.6849 )
 
 [node name="HillsTop3" parent="YSort/Hills" instance=ExtResource( 16 )]
-position = Vector2( 700.341, -99.8991 )
+position = Vector2( 702.123, -82.972 )
 
 [node name="HillsFront2" parent="YSort/Hills" instance=ExtResource( 15 )]
-position = Vector2( 494.882, 0.397095 )
+position = Vector2( 495.941, 14.6999 )
 
 [node name="HillsFront3" parent="YSort/Hills" instance=ExtResource( 15 )]
-position = Vector2( 749.995, 0.710327 )
+position = Vector2( 750.79, 14.8806 )
 
 [node name="HillsFront4" parent="YSort/Hills" instance=ExtResource( 15 )]
-position = Vector2( 622.413, 0.268494 )
+position = Vector2( 622.833, 14.774 )
 
 [node name="HillsUp" parent="YSort/Hills" instance=ExtResource( 17 )]
 position = Vector2( 630.017, 235.802 )
 
 [node name="HillsTop4" parent="YSort/Hills" instance=ExtResource( 16 )]
-position = Vector2( 753.733, 253.119 )
+position = Vector2( 757.692, 270.847 )
 
 [node name="HillsUp2" parent="YSort/Hills" instance=ExtResource( 17 )]
 position = Vector2( 504.071, 235.727 )
@@ -183,7 +196,10 @@ position = Vector2( 504.071, 235.727 )
 position = Vector2( 377.421, 235.764 )
 
 [node name="HillsLeft4" parent="YSort/Hills" instance=ExtResource( 14 )]
-position = Vector2( 355.162, 300.153 )
+position = Vector2( 355.582, 316.971 )
+
+[node name="HillsUp4" parent="YSort/Hills" instance=ExtResource( 17 )]
+position = Vector2( 756.901, 235.938 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -196,7 +212,13 @@ margin_bottom = 178.736
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 0.667419, 1.10771 )
 polygon = PoolVector2Array( -191.614, -72.3859, -239.251, -128.351, 804.422, -126.049, 815.749, 366.653, -270.65, 352.495, -243.278, -120.386, -192.352, -68.642, -192.217, 247.034, 731.452, 248.749, 730.466, -75.4207 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+volume_db = -20.0
+autoplay = true
 
 [editable path="Camera2D"]
 

@@ -1,10 +1,33 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Sprites/Main_menu_screen.png" type="Texture" id=1]
 [ext_resource path="res://TitleScreen.gd" type="Script" id=2]
 [ext_resource path="res://Sound/Music/Kevin-MacLeod-Jethro-on-the-Run.wav" type="AudioStream" id=3]
 [ext_resource path="res://Button.gd" type="Script" id=4]
 [ext_resource path="res://Sound/SFX/Play.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sprites/UI/Play pressed.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/UI/Play normal.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/UI/Play hover.png" type="Texture" id=8]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 8 )
+normal_map = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 125, 60 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 6 )
+normal_map = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 125, 60 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 6 )
+normal_map = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 125, 60 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 7 )
+normal_map = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 125, 60 )
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
@@ -24,15 +47,21 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-anchor_left = 0.322
-anchor_top = 0.672
-anchor_right = 0.662
-anchor_bottom = 0.933
-margin_left = -0.0400085
-margin_top = 0.0399933
-margin_right = 0.159973
-margin_bottom = 0.0599976
-flat = true
+anchor_left = 0.321
+anchor_top = 0.659
+anchor_right = 0.665
+anchor_bottom = 0.897
+margin_left = -5.72339
+margin_top = -5.62001
+margin_right = 9.19661
+margin_bottom = 6.53999
+focus_mode = 1
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+action_mode = 0
+enabled_focus_mode = 1
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
