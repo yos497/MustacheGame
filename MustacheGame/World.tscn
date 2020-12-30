@@ -121,8 +121,8 @@ position = Vector2( 148.419, -43.7225 )
 [node name="KnifeBandit" parent="YSort/Bandits" instance=ExtResource( 11 )]
 position = Vector2( -141.13, 176.472 )
 
-[node name="ArmedBandit" parent="YSort/Bandits/KnifeBandit" instance=ExtResource( 12 )]
-position = Vector2( 250.415, 37.2248 )
+[node name="ArmedBandit" parent="YSort/Bandits" instance=ExtResource( 12 )]
+position = Vector2( 109.285, 213.697 )
 
 [node name="Houses" type="YSort" parent="YSort"]
 
