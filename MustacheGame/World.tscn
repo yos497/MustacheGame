@@ -101,6 +101,9 @@ position = Vector2( 333.138, 159.25 )
 [node name="TutorialCactus9" parent="YSort/TutorialCactus" instance=ExtResource( 5 )]
 position = Vector2( 333.291, 174.968 )
 
+[node name="TutorialCactus10" parent="YSort/TutorialCactus" instance=ExtResource( 5 )]
+position = Vector2( 332.93, 190.368 )
+
 [node name="Snakes" type="YSort" parent="YSort"]
 
 [node name="Snake" parent="YSort/Snakes" instance=ExtResource( 6 )]
@@ -146,13 +149,13 @@ position = Vector2( 516.864, 48.2706 )
 position = Vector2( 644.093, 48.7394 )
 
 [node name="HouseUP" parent="YSort/Houses" instance=ExtResource( 19 )]
-position = Vector2( 386.706, 202.818 )
+position = Vector2( 388.692, 211.161 )
 
 [node name="HouseUP2" parent="YSort/Houses" instance=ExtResource( 19 )]
-position = Vector2( 513.301, 202.025 )
+position = Vector2( 513.45, 210.498 )
 
 [node name="HouseUP3" parent="YSort/Houses" instance=ExtResource( 19 )]
-position = Vector2( 643.865, 202.025 )
+position = Vector2( 647.577, 211.041 )
 
 [node name="Hills" type="YSort" parent="YSort"]
 
@@ -184,7 +187,7 @@ position = Vector2( 622.413, 0.268494 )
 position = Vector2( 630.017, 235.802 )
 
 [node name="HillsTop4" parent="YSort/Hills" instance=ExtResource( 16 )]
-position = Vector2( 753.733, 253.119 )
+position = Vector2( 757.692, 270.847 )
 
 [node name="HillsUp2" parent="YSort/Hills" instance=ExtResource( 17 )]
 position = Vector2( 504.071, 235.727 )
@@ -193,7 +196,10 @@ position = Vector2( 504.071, 235.727 )
 position = Vector2( 377.421, 235.764 )
 
 [node name="HillsLeft4" parent="YSort/Hills" instance=ExtResource( 14 )]
-position = Vector2( 355.162, 300.153 )
+position = Vector2( 355.582, 316.971 )
+
+[node name="HillsUp4" parent="YSort/Hills" instance=ExtResource( 17 )]
+position = Vector2( 756.901, 235.938 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
