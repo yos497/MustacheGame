@@ -3,8 +3,8 @@ extends KinematicBody2D
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 const BULLET = preload("res://World/EnemyBullet.tscn")
 
-export var ACCELERATION = 200
-export var MAX_SPEED = 30
+export var ACCELERATION = 300
+export var MAX_SPEED = 35
 export var FRICTION = 200
 
 enum {
@@ -36,7 +36,7 @@ func _ready():
 	state = pick_random_state([IDLE, WANDER])
 
 func _physics_process(delta):
-	knockback = knockback.move_toward(Vector2.ZERO, 400 * delta)
+	knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
 	knockback = move_and_slide(knockback)
 	
 	match state:
