@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Text continue.wav-965efb4d104cf57844a940684a7a4900.sample"
+
+[deps]
+
+source_file="res://Sound/SFX/Text continue.wav"
+dest_files=[ "res://.import/Text continue.wav-965efb4d104cf57844a940684a7a4900.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,17 +1,13 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://World/Barrel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/DialogueBox/DBoxTriggerArea.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Big Dunes tile.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Desert transition 2.png" type="Texture" id=4]
 [ext_resource path="res://World/TutorialCactus.tscn" type="PackedScene" id=5]
-[ext_resource path="res://World/Snake.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Flat desert.png" type="Texture" id=7]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Camera2D.tscn" type="PackedScene" id=9]
-[ext_resource path="res://World/EnemyCactus.tscn" type="PackedScene" id=10]
-[ext_resource path="res://World/KnifeBandit.tscn" type="PackedScene" id=11]
-[ext_resource path="res://World/ArmedBandit.tscn" type="PackedScene" id=12]
 [ext_resource path="res://World/House.tscn" type="PackedScene" id=13]
 [ext_resource path="res://World/HillsLeft.tscn" type="PackedScene" id=14]
 [ext_resource path="res://World/HillsFront.tscn" type="PackedScene" id=15]
@@ -20,8 +16,14 @@
 [ext_resource path="res://World/Saloon.tscn" type="PackedScene" id=18]
 [ext_resource path="res://World/HouseUP.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Sound/Music/Kevin-MacLeod-Master-of-the-Feast.wav" type="AudioStream" id=20]
+[ext_resource path="res://World.gd" type="Script" id=21]
 
-[node name="World" type="Node2D"]
+[node name="World 1" type="Node2D"]
+script = ExtResource( 21 )
+
+[node name="DialogueTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
 
 [node name="Dunes" type="Sprite" parent="."]
 position = Vector2( -192, -72 )
@@ -45,7 +47,7 @@ region_enabled = true
 region_rect = Rect2( 0, -128, 64, 320 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 9 )]
-position = Vector2( 136, 64 )
+position = Vector2( -70.5278, 114.677 )
 
 [node name="TopLeft" parent="Camera2D/Limits" index="0"]
 position = Vector2( -191.767, -72.364 )
@@ -56,21 +58,12 @@ position = Vector2( 731.799, 247.878 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 136, 64 )
+position = Vector2( -70.5278, 114.677 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../../Camera2D")
 
 [node name="Barrels" type="YSort" parent="YSort"]
-
-[node name="Barrel" parent="YSort/Barrels" instance=ExtResource( 2 )]
-position = Vector2( 88.0811, 9.87373 )
-
-[node name="Barrel3" parent="YSort/Barrels" instance=ExtResource( 2 )]
-position = Vector2( 227.88, 125.003 )
-
-[node name="Barrel2" parent="YSort/Barrels" instance=ExtResource( 2 )]
-position = Vector2( 95.6245, 123.706 )
 
 [node name="TutorialCactus" type="YSort" parent="YSort"]
 
@@ -106,36 +99,9 @@ position = Vector2( 332.93, 190.368 )
 
 [node name="Snakes" type="YSort" parent="YSort"]
 
-[node name="Snake" parent="YSort/Snakes" instance=ExtResource( 6 )]
-position = Vector2( 228.617, 219.221 )
-
-[node name="Snake2" parent="YSort/Snakes" instance=ExtResource( 6 )]
-position = Vector2( 45.8286, 218.632 )
-
-[node name="Snake3" parent="YSort/Snakes" instance=ExtResource( 6 )]
-position = Vector2( -69.7367, -14.7223 )
-
 [node name="EnemyCacti" type="YSort" parent="YSort"]
 
-[node name="EnemyCactus" parent="YSort/EnemyCacti" instance=ExtResource( 10 )]
-position = Vector2( 214.693, 5.88378 )
-
-[node name="EnemyCactus2" parent="YSort/EnemyCacti" instance=ExtResource( 10 )]
-position = Vector2( -13.0846, 162.447 )
-
 [node name="Bandits" type="YSort" parent="YSort"]
-
-[node name="KnifeBandit" parent="YSort/Bandits" instance=ExtResource( 11 )]
-position = Vector2( -128.227, 183.871 )
-
-[node name="ArmedBandit" parent="YSort/Bandits" instance=ExtResource( 12 )]
-position = Vector2( -122.074, -9.26131 )
-
-[node name="KnifeBandit2" parent="YSort/Bandits" instance=ExtResource( 11 )]
-position = Vector2( 95.9074, -26.0885 )
-
-[node name="ArmedBandit2" parent="YSort/Bandits" instance=ExtResource( 12 )]
-position = Vector2( 115.75, 218.286 )
 
 [node name="Houses" type="YSort" parent="YSort"]
 
@@ -219,6 +185,11 @@ polygon = PoolVector2Array( -191.614, -72.3859, -239.251, -128.351, 804.422, -12
 stream = ExtResource( 20 )
 volume_db = -20.0
 autoplay = true
+
+[node name="CactusDBoxArea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 276.625, 116.02 )
+[connection signal="timeout" from="DialogueTimer" to="." method="_on_DialogueTimer_timeout"]
+[connection signal="body_entered" from="CactusDBoxArea" to="." method="_on_CactusDBoxArea_body_entered"]
 
 [editable path="Camera2D"]
 
