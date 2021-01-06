@@ -36,4 +36,4 @@ func _on_SaloonDBoxArea_body_entered(body):
 		saloon_dbox_area.queue_free()
 
 func _on_SaloonDoor_body_entered(body):
-	SceneChanger.change_scene("res://PerkShopInterface.tscn", "fade")
+	SceneChanger.change_scene("res://Main scenes/PerkShopInterface.tscn", "fade")

@@ -1,20 +1,20 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Bullet.gd" type="Script" id=1]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/bullet.png" type="Texture" id=2]
-[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.gd" type="Script" id=4]
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 7.26842, 0.770099 )
+[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.gd" type="Script" id=3]
+[ext_resource path="res://Player/Bullet/Bullet.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.26842, 0.770099 )
+
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 2.17048, 1.13972 )
 
 [node name="Bullet" type="KinematicBody2D"]
 collision_layer = 0
 collision_mask = 64
-script = ExtResource( 1 )
+script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 11.7312, 0.530323 )
@@ -23,16 +23,16 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 7.29828, 1.00226 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
-[node name="BulletHitbox" parent="." instance=ExtResource( 3 )]
+[node name="BulletHitbox" parent="." instance=ExtResource( 1 )]
 collision_mask = 8
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 isBullet = true
 
 [node name="CollisionShape2D" parent="BulletHitbox" index="0"]
 position = Vector2( 2.04268, 1.00226 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 [connection signal="area_entered" from="BulletHitbox" to="." method="_on_Hitbox_area_entered"]
 
 [editable path="BulletHitbox"]

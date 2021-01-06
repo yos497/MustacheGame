@@ -7,7 +7,7 @@
 [ext_resource path="res://World/TutorialCactus.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/Flat desert.png" type="Texture" id=7]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Camera2D.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/Camera2D.tscn" type="PackedScene" id=9]
 [ext_resource path="res://World/House.tscn" type="PackedScene" id=13]
 [ext_resource path="res://World/HillsLeft.tscn" type="PackedScene" id=14]
 [ext_resource path="res://World/HillsFront.tscn" type="PackedScene" id=15]
@@ -16,7 +16,7 @@
 [ext_resource path="res://World/Saloon.tscn" type="PackedScene" id=18]
 [ext_resource path="res://World/HouseUP.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Sound/Music/Kevin-MacLeod-Master-of-the-Feast.wav" type="AudioStream" id=20]
-[ext_resource path="res://World.gd" type="Script" id=21]
+[ext_resource path="res://Main scenes/World 1.gd" type="Script" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 45.6161, 81.2526 )

@@ -5,7 +5,7 @@ export var MAX_SPEED = 80
 export var ROLL_SPEED = 110
 export var FRICTION = 500
 
-const BULLET = preload("res://Bullet.tscn")
+const BULLET = preload("res://Player/Bullet/Bullet.tscn")
 
 enum {
 	MOVE,
