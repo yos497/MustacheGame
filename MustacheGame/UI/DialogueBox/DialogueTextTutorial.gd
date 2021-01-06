@@ -1,4 +1,17 @@
-extends "res://UI/DialogueBox/DialogueText.gd"
+extends RichTextLabel
+
+onready var close_sound = $CloseSound
+onready var close_timer = $CloseTimer
+onready var cont_sound = $ContinueSound
+onready var dialogue = get_parent().dialogue
+
+var close_sound_cond = true #Used as in the if statement as a means of preventing close sound from repeating
+var page = 0
+
+func _ready():
+	set_bbcode(dialogue[page])
+	set_visible_characters(0)
+	set_process_input(true)
 
 func _input(event):
 	if Input.is_mouse_button_pressed(1):
@@ -13,6 +26,9 @@ func _input(event):
 				close_timer.start()
 				close_sound.play()
 				close_sound_cond = false
+
+func _on_Timer_timeout():
+	set_visible_characters(get_visible_characters() + 1)
 
 func _on_CloseTimer_timeout():
 	get_parent().get_parent().get_parent().is_dialogue_on = false

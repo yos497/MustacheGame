@@ -2,6 +2,7 @@ extends CanvasLayer
 
 onready var animation = $AnimationPlayer
 var scene : String
+export var is_perkshop_first_visit = true
 
 func change_scene(new_scene, anim):
 	scene = new_scene

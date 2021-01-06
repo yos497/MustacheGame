@@ -26,7 +26,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DialogueText" type="RichTextLabel" parent="."]
+[node name="DialogueTextTutorial" type="RichTextLabel" parent="."]
 anchor_left = 0.041
 anchor_top = 0.11
 anchor_right = 0.972
@@ -45,15 +45,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ContinueSound" type="AudioStreamPlayer" parent="DialogueText"]
+[node name="ContinueSound" type="AudioStreamPlayer" parent="DialogueTextTutorial"]
 stream = ExtResource( 3 )
 volume_db = -20.0
 
-[node name="CloseSound" type="AudioStreamPlayer" parent="DialogueText"]
+[node name="CloseSound" type="AudioStreamPlayer" parent="DialogueTextTutorial"]
 stream = ExtResource( 2 )
 volume_db = -20.0
 
-[node name="CloseTimer" type="Timer" parent="DialogueText"]
+[node name="CloseTimer" type="Timer" parent="DialogueTextTutorial"]
 process_mode = 0
 one_shot = true
 
@@ -84,5 +84,5 @@ autostart = true
 stream = ExtResource( 7 )
 volume_db = -20.0
 autoplay = true
-[connection signal="timeout" from="DialogueText/CloseTimer" to="DialogueText" method="_on_CloseTimer_timeout"]
-[connection signal="timeout" from="Timer" to="DialogueText" method="_on_Timer_timeout"]
+[connection signal="timeout" from="DialogueTextTutorial/CloseTimer" to="DialogueTextTutorial" method="_on_CloseTimer_timeout"]
+[connection signal="timeout" from="Timer" to="DialogueTextTutorial" method="_on_Timer_timeout"]
