@@ -32,7 +32,7 @@ polygon = PoolVector2Array( -1.19151, -1.34347, -0.876526, -21.5022, -29.2247, -
 position = Vector2( -37.4767, -0.481995 )
 
 [node name="BottomRight" parent="Camera2D/Limits" index="1"]
-position = Vector2( 346.156, 307.518 )
+position = Vector2( 346.156, 231.293 )
 
 [node name="YSort" type="YSort" parent="."]
 
