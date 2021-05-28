@@ -33,5 +33,7 @@ func _on_Timer_timeout():
 	set_visible_characters(get_visible_characters() + 1)
 
 func _on_CloseTimer_timeout():
+	SceneChanger.is_dialogue_on = false
+	emit_signal("queue_free_signal")
 	close_sound.queue_free()
 	get_parent().queue_free()

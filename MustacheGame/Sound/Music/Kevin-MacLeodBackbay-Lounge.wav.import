@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Kevin-MacLeodBackbay-Lounge.wav-d16e3cf6198fab2e5d9001bc1ea5abd0.sample"
+
+[deps]
+
+source_file="res://Sound/Music/Kevin-MacLeodBackbay-Lounge.wav"
+dest_files=[ "res://.import/Kevin-MacLeodBackbay-Lounge.wav-d16e3cf6198fab2e5d9001bc1ea5abd0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

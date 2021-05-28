@@ -82,7 +82,7 @@ func move_state(delta):
 		rolling = true
 		hurtbox.start_invincibility(0.5)
 	
-	if Input.is_action_just_pressed("attack") and get_parent().get_parent().is_dialogue_on == false:
+	if Input.is_action_just_pressed("attack") and SceneChanger.is_dialogue_on == false:
 		state = SLASH
 		
 	if Input.is_action_just_pressed("shoot"):

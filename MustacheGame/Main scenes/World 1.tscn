@@ -217,17 +217,14 @@ collision_layer = 0
 [node name="CollisionShape2D" parent="SaloonDBoxArea" index="0"]
 rotation = -1.5708
 shape = SubResource( 2 )
+
 [connection signal="timeout" from="DialogueTimer" to="." method="_on_DialogueTimer_timeout"]
 [connection signal="body_entered" from="YSort/Houses/Saloon/SaloonDoor" to="." method="_on_SaloonDoor_body_entered"]
 [connection signal="body_entered" from="CactusDBoxArea" to="." method="_on_CactusDBoxArea_body_entered"]
 [connection signal="body_entered" from="SaloonDBoxArea" to="." method="_on_SaloonDBoxArea_body_entered"]
 
 [editable path="Camera2D"]
-
 [editable path="YSort/Houses/Saloon"]
-
 [editable path="YSort/Houses/House5"]
-
 [editable path="CactusDBoxArea"]
-
 [editable path="SaloonDBoxArea"]

@@ -10,7 +10,6 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
@@ -23,6 +22,7 @@ config/icon="res://icon.png"
 
 PlayerStats="*res://Player/PlayerStats.tscn"
 SceneChanger="*res://SceneChanger.tscn"
+PsInfo="*res://PSInfo.tscn"
 
 [display]
 
