@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Randy.png" type="Texture" id=2]
@@ -35,6 +35,40 @@ tracks/0/keys = {
 "values": [ 6 ]
 }
 
+[sub_resource type="Animation" id=62]
+resource_name = "IdleDownG"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 94 ]
+}
+
+[sub_resource type="Animation" id=63]
+resource_name = "IdleDownM"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 50 ]
+}
+
 [sub_resource type="Animation" id=4]
 length = 0.1
 loop = true
@@ -49,6 +83,40 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 12 ]
+}
+
+[sub_resource type="Animation" id=64]
+resource_name = "IdleLeftG"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 100 ]
+}
+
+[sub_resource type="Animation" id=65]
+resource_name = "IdleLeftM"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 56 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -67,6 +135,40 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
+[sub_resource type="Animation" id=66]
+resource_name = "IdleRightG"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 88 ]
+}
+
+[sub_resource type="Animation" id=67]
+resource_name = "IdleRightM"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 44 ]
+}
+
 [sub_resource type="Animation" id=6]
 length = 0.1
 loop = true
@@ -81,6 +183,40 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 18 ]
+}
+
+[sub_resource type="Animation" id=68]
+resource_name = "IdleUpG"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 106 ]
+}
+
+[sub_resource type="Animation" id=69]
+resource_name = "IdleUpM"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 62 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -1160,7 +1296,7 @@ material = SubResource( 1 )
 position = Vector2( -0.218271, -7.00942 )
 texture = ExtResource( 2 )
 hframes = 207
-frame = 6
+frame = 106
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.5708
@@ -1168,9 +1304,17 @@ shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/IdleDown = SubResource( 3 )
+anims/IdleDownG = SubResource( 62 )
+anims/IdleDownM = SubResource( 63 )
 anims/IdleLeft = SubResource( 4 )
+anims/IdleLeftG = SubResource( 64 )
+anims/IdleLeftM = SubResource( 65 )
 anims/IdleRight = SubResource( 5 )
+anims/IdleRightG = SubResource( 66 )
+anims/IdleRightM = SubResource( 67 )
 anims/IdleUp = SubResource( 6 )
+anims/IdleUpG = SubResource( 68 )
+anims/IdleUpM = SubResource( 69 )
 anims/RollDown = SubResource( 7 )
 anims/RollLeft = SubResource( 8 )
 anims/RollRight = SubResource( 9 )
@@ -1231,8 +1375,8 @@ wait_time = 0.2
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
-volume_db = -19.0
+stream = ExtResource( 9 )
+volume_db = -8.0
 
 [node name="PlayerGroan" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
