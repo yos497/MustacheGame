@@ -1,6 +1,6 @@
 extends Node2D
 
-const DIALOGUE_BOX = preload("res://UI/DialogueBox/DialogueBoxTutorial.tscn")
+const DIALOGUE_BOX = preload("res://UI/DialogueBox/DialogueBox.tscn") #To 
 
 onready var timer = $DialogueTimer
 onready var ui = $CanvasLayer
@@ -34,4 +34,5 @@ func _on_SaloonDBoxArea_body_entered(body):
 		saloon_dbox_area.queue_free()
 
 func _on_SaloonDoor_body_entered(body):
-	SceneChanger.change_scene("res://Main scenes/PerkShopInterface.tscn", "fade")
+	if SceneChanger.is_dialogue_on == false:
+		SceneChanger.change_scene("res://Main scenes/PerkShopInterface.tscn", "fade")

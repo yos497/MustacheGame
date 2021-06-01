@@ -6,8 +6,6 @@
 [ext_resource path="res://UI/Button.gd" type="Script" id=4]
 [ext_resource path="res://Sound/SFX/Menu select.wav" type="AudioStream" id=5]
 
-
-
 [node name="GameOver" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -47,4 +45,5 @@ volume_db = -15.0
 stream = ExtResource( 3 )
 volume_db = -20.0
 autoplay = true
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

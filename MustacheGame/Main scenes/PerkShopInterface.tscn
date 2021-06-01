@@ -33,5 +33,6 @@ one_shot = true
 [node name="TextPop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -20.0
+
 [connection signal="timeout" from="AfterElipses" to="." method="_on_AfterElipses_timeout"]
 [connection signal="timeout" from="FirstSpeechDelay" to="." method="_on_FirstSpeechDelay_timeout"]
