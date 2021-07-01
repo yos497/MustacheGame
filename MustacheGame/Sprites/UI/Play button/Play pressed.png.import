@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Perk shop (with Perks) F1.png-53b5175c5e665b165676b8d5c72eab1b.stex"
+path="res://.import/Play pressed.png-5a389562fb235043b33b048664076bc2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Perk Shop/Perk shop (with Perks) F1.png"
-dest_files=[ "res://.import/Perk shop (with Perks) F1.png-53b5175c5e665b165676b8d5c72eab1b.stex" ]
+source_file="res://Sprites/UI/Play button/Play pressed.png"
+dest_files=[ "res://.import/Play pressed.png-5a389562fb235043b33b048664076bc2.stex" ]
 
 [params]
 

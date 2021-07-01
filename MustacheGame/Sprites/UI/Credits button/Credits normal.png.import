@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Perk shop frame one.png-3e4b43a4ab7a5948de9c93b125495e9b.stex"
+path="res://.import/Credits normal.png-682bea3da40a28777798f876f5cbccdb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Perk Shop/Perk shop frame one.png"
-dest_files=[ "res://.import/Perk shop frame one.png-3e4b43a4ab7a5948de9c93b125495e9b.stex" ]
+source_file="res://Sprites/UI/Credits button/Credits normal.png"
+dest_files=[ "res://.import/Credits normal.png-682bea3da40a28777798f876f5cbccdb.stex" ]
 
 [params]
 

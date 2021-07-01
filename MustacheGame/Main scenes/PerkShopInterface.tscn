@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Sprites/Perk Shop/Perk shop (with Perks).png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Perk Shop/Perk shop.png" type="Texture" id=1]
 [ext_resource path="res://Sound/Music/Kevin-MacLeodBackbay-Lounge.wav" type="AudioStream" id=2]
 [ext_resource path="res://Main scenes/PerkShopInterface.gd" type="Script" id=3]
 [ext_resource path="res://Sound/SFX/Text pop.wav" type="AudioStream" id=4]
@@ -16,7 +16,7 @@ __meta__ = {
 [node name="SpriteTexture" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
-hframes = 2
+hframes = 10
 frame = 1
 
 [node name="AfterElipses" type="Timer" parent="."]

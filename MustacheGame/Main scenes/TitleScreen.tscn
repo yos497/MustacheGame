@@ -3,11 +3,11 @@
 [ext_resource path="res://Main scenes/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://UI/Button.gd" type="Script" id=2]
 [ext_resource path="res://Sound/Music/Kevin-MacLeod-Jethro-on-the-Run.wav" type="AudioStream" id=3]
-[ext_resource path="res://Sprites/UI/Play pressed.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/UI/Play button/Play pressed.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Main_menu_screen.png" type="Texture" id=5]
 [ext_resource path="res://Sound/SFX/Play.wav" type="AudioStream" id=6]
-[ext_resource path="res://Sprites/UI/Play normal.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/UI/Play hover.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/UI/Play button/Play normal.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/UI/Play button/Play hover.png" type="Texture" id=8]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 8 )

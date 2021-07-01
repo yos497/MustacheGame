@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Perk shop (with Perks).png-4436a36961118d5ff3fb2045346a431e.stex"
+path="res://.import/Credits hover.png-c1471570c47c9546893c07721cf12eaa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Perk Shop/Perk shop (with Perks).png"
-dest_files=[ "res://.import/Perk shop (with Perks).png-4436a36961118d5ff3fb2045346a431e.stex" ]
+source_file="res://Sprites/UI/Credits button/Credits hover.png"
+dest_files=[ "res://.import/Credits hover.png-c1471570c47c9546893c07721cf12eaa.stex" ]
 
 [params]
 

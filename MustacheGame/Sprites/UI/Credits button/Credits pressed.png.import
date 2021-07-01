@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Credits pressed.png-afd3331ae8819157416a064c9667277b.stex"
+path="res://.import/Credits pressed.png-add8a7c5866942046655d52b612b3f39.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Credits pressed.png"
-dest_files=[ "res://.import/Credits pressed.png-afd3331ae8819157416a064c9667277b.stex" ]
+source_file="res://Sprites/UI/Credits button/Credits pressed.png"
+dest_files=[ "res://.import/Credits pressed.png-add8a7c5866942046655d52b612b3f39.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Perk shop frame zero.png-57b1494f07f7a8db33a3b1fbae6405e2.stex"
+path="res://.import/Play hover.png-d51775c31e0eff6ca10b97c00f70045b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Perk Shop/Perk shop frame zero.png"
-dest_files=[ "res://.import/Perk shop frame zero.png-57b1494f07f7a8db33a3b1fbae6405e2.stex" ]
+source_file="res://Sprites/UI/Play button/Play hover.png"
+dest_files=[ "res://.import/Play hover.png-d51775c31e0eff6ca10b97c00f70045b.stex" ]
 
 [params]
 

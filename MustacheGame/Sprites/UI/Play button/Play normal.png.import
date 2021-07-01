@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Credits normal.png-7d3a03161244a9fe5fa37e1f9b8cadf6.stex"
+path="res://.import/Play normal.png-c3cdb91ea06a58f0083d92b387a6185a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Credits normal.png"
-dest_files=[ "res://.import/Credits normal.png-7d3a03161244a9fe5fa37e1f9b8cadf6.stex" ]
+source_file="res://Sprites/UI/Play button/Play normal.png"
+dest_files=[ "res://.import/Play normal.png-c3cdb91ea06a58f0083d92b387a6185a.stex" ]
 
 [params]
 

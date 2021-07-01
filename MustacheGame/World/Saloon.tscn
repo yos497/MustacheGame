@@ -6,8 +6,8 @@
 extents = Vector2( 54.3553, 15.9729 )
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 8.68624
-height = 17.1002
+radius = 7.05285
+height = 15.0906
 
 [node name="Saloon" type="StaticBody2D"]
 

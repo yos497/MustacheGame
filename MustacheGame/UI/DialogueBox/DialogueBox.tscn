@@ -11,7 +11,6 @@
 script/source = "extends TextureRect
 
 export (Array, String) var dialogue = []
-
 "
 
 [sub_resource type="DynamicFont" id=2]
@@ -90,5 +89,6 @@ autostart = true
 stream = ExtResource( 6 )
 volume_db = -20.0
 autoplay = true
+
 [connection signal="timeout" from="DialogueText/CloseTimer" to="DialogueText" method="_on_CloseTimer_timeout"]
 [connection signal="timeout" from="Timer" to="DialogueText" method="_on_Timer_timeout"]
