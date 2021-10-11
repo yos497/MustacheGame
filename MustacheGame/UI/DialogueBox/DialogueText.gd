@@ -5,7 +5,7 @@ onready var close_timer = $CloseTimer
 onready var cont_sound = $ContinueSound
 onready var dialogue = get_parent().dialogue
 
-var close_sound_cond = true #Used as in the if statement as a means of preventing close sound from repeating
+var close_sound_cond = true #Used in the if statement as a means of preventing close sound from repeating
 var page = 0
 
 func _ready():
@@ -18,6 +18,7 @@ func _input(event):
 		if get_visible_characters() > get_total_character_count():
 			if page < dialogue.size() - 1:
 				page += 1
+				emit_signal("")
 				cont_sound.play()
 				set_bbcode(dialogue[page])
 				set_visible_characters(0)

@@ -6,7 +6,7 @@ onready var after_elipses = $AfterElipses
 onready var music = $BackbayLounge
 onready var text_pop = $TextPop
 
-const DIALOGUE_BOX = preload("res://UI/DialogueBox/DialogueBoxTutorial.tscn")
+const DIALOGUE_BOX = preload("res://UI/DialogueBox/DialogueBoxTutorial/DialogueBoxTutorial.tscn")
 
 func _ready():
 	if SceneChanger.manliness == 0:
